@@ -1,4 +1,3 @@
-  
 version: '3'
 services:
     messaging:
@@ -19,3 +18,4 @@ services:
         build: ./front_end
         ports:
             - 5000:5000
+
