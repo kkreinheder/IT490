@@ -6,12 +6,12 @@ services:
         image: 'mysql'
         environment:
             MYSQL_ROOT_PASSWORD: password
-    front_end:
-        build: ./front_end
+    front-end:
+        build: ./front-end
         ports:
             - 5000:5000  
-    back_end:
+    back-end:
         image: python:3.7-alpine
-        build: ./back_end
+        build: ./back-end
         
        
