@@ -12,6 +12,5 @@ services:
             - 5000:5000  
      back_end:
         build: ./back_end
-        volumes:
-            - ./back_end:/app/back_end
+        
        
