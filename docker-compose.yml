@@ -10,7 +10,8 @@ services:
         build: ./front_end
         ports:
             - 5000:5000  
-     back_end:
+    back_end:
+        image: python:3.7
         build: ./back_end
         
        
