@@ -1,6 +1,10 @@
-FROM python:3
-ENV PYTHONUNBUFFERED=1
-COPY . /app
-WORKDIR /app
+FROM python:3.7-alpine
+WORKDIR /code
+ENV FLASK_APP app.py
+ENV FLASK_RUN_HOST 0.0.0.0
+RUN apk add --no-cache gcc musl-dev linux-headers
+EXPOSE 5000
+COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
-CMD python test.py
+COPY . .
+CMD ["flask", "run"]
