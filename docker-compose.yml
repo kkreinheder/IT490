@@ -3,12 +3,11 @@ services:
     rabbitmq:
         messaging:
         image: 'rabbitmq:3-management'
-	container_name: rabbitmq
-	volumes:
-	environment: 
-	ports:
-	  - 3000:5672
-	  - 5000:15672
+        container_name: rabbitmq
+        volumes:
+        environment: 
+        ports:
+         - 5000:5000
     mysql:
         image: 'mysql'
         environment:
