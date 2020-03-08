@@ -1,6 +1,5 @@
 FROM python:3.7-alpine
-WORKDIR \C:\Users\kylek\OneDrive\Documents\NJIT\2020Spring\IT490\Project\IT490\back-end
-COPY requirements.txt, DBConnect.py
+WORKDIR /app
+COPY . /app
 RUN pip install -r requirements.txt
-COPY . .
-CMD ["python", "DBConnect.py"]
+CMD python DBConnect.py
