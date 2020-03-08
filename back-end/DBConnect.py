@@ -2,7 +2,7 @@
 
 import pymysql
 
-db = pymysql.connect("0.0.0.0", "test", "test", "db-mysql")
+db = pymysql.connect("172.18.0.3", "test", "test", "db-mysql")
 
 cursor = db.cursor()
 
