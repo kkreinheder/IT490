@@ -10,6 +10,7 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
     front-end:
+        image: nginx
         build: ./front-end
         ports:
             - 5000:5000  
