@@ -3,7 +3,8 @@
 <!doctype html>
 <html lang="en">
 
-
+              {% extends "template.html" %}
+              {% block content %}
 
                    
                 </h1>
@@ -37,7 +38,7 @@
   
 
 
-
+                {% endblock %}
 </body>
 
 </html>
