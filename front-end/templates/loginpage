@@ -2,7 +2,7 @@
 
 <!doctype html>
 <html lang="en">
-
+         <body>
               {% extends "template.html" %}
               {% block content %}
 
