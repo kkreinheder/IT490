@@ -12,7 +12,6 @@ services:
     front-end:
         image: nginx
         build: ./front-end
-      website:
         ports:
             - 5000:5000  
     back-end:
