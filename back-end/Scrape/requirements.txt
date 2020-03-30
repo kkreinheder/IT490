@@ -1,2 +1,2 @@
-pika 
+BeautifulSoup
 mysql-connector-python

@@ -10,12 +10,16 @@ services:
         environment:
             MYSQL_ROOT_PASSWORD: password
     front-end:
+        image: nginx
         build: ./front-end
         ports:
             - 5000:5000  
     back-end:
         build: ./back-end
+        build: ./back-end/Scrape
         image: python:3.7-alpine
+        stdin_open: true
+        tty: true
       
         
        

@@ -2,14 +2,13 @@
 
 import pymysql
 
-db = pymysql.connect("0.0.0.0", "test", "test", "db-mysql")
+db = pymysql.connect("172.18.0.3", "test", "test", "db-mysql")
 
 cursor = db.cursor()
 
-while true:
-
+while True:
     write = "INSERT INTO user (first_name, last_name, email) VALUES (John, Smith, jsmith@gmail.com)"
-        
+
     read = "SELECT * FROM user"
 
     try:
@@ -20,4 +19,4 @@ while true:
     except:
         db.rollback()
 
-  #  db.close()
+    db.close()
