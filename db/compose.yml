@@ -1,16 +1,20 @@
 version: '3'
 
 services:
-   db:
-     image: mysql
-     volumes:
-       - db-volume:/var/lib/mysql/data
-     restart: always
-     environment:
-       MYSQL_ROOT_PASSWORD: test
-       MYSQL_DATABASE: test
-       MYSQL_USER: test
-       MYSQL_PASSWORD: test
-    
-volumes:
-    db-volume: {}
+  mysqlmaster:
+    image: mysql
+    container_name: dbmaster
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+    volumes:
+      - ./data/mysql-master:/var/lib/mysql/
+      - ./config/mysql-master:/etc/mysql/conf.d/
+      
+  mysqlslave:
+    image: mysql
+    container_name: dbslave
+    environment:
+      - "MYSQL_ROOT_PASSWORD=root"
+    volumes:
+      - ./data/mysql-slave:/var/lib/mysql/
+      - ./config/mysql-slave:/etc/mysql/conf.d/
