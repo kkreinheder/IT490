@@ -2,23 +2,30 @@
 
 import pymysql
 
-db_rw = pymysql.connect("db_rw", "test", "test", "db-mysql")
-cursor = db_rw.cursor()
-
-db_r = pymysql.connect("db_r", "test", "test", "db-mysql")
-cursor = db_r.cursor()
-
 while True:
-    write = "INSERT INTO user (first_name, last_name, email) VALUES (John, Smith, jsmith@gmail.com)"
+    db_rw = pymysql.connect("db_rw", "test", "test", "db-mysql")
+    cursor1 = db_rw.cursor()
 
-    read = "SELECT * FROM user"
+    db_r = pymysql.connect("db_r", "test", "test", "db-mysql")
+    cursor2 = db_r.cursor()
 
-    try:
-        cursor.execute(write)
-        cursor.execute(read)
-        db.commit()
 
-    except:
-        db.rollback()
+write = "INSERT INTO user (first_name, last_name, email) VALUES (first_name, last_name, email)"
+read1 = "SELECT * FROM user"
 
-    db.close()
+try:
+    cursor1.execute(write)
+    cursor1.execute(read)
+    db_rw.commit()
+
+except:
+    db.rollback()
+
+db.close()
+
+read2 = "SELECT * FROM user"
+
+try:
+    cursor2.execute(read)
+    
+db.close()
