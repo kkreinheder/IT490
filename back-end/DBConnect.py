@@ -2,9 +2,11 @@
 
 import pymysql
 
-db = pymysql.connect("172.18.0.3", "test", "test", "db-mysql")
+db_rw = pymysql.connect("db_rw", "test", "test", "db-mysql")
+cursor = db_rw.cursor()
 
-cursor = db.cursor()
+db_r = pymysql.connect("db_r", "test", "test", "db-mysql")
+cursor = db_r.cursor()
 
 while True:
     write = "INSERT INTO user (first_name, last_name, email) VALUES (John, Smith, jsmith@gmail.com)"
