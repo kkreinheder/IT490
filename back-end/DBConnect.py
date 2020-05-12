@@ -21,8 +21,7 @@ try:
 except:
     db.rollback()
 
-db.close()
-
+    
 read2 = "SELECT * FROM user"
 
 try:
