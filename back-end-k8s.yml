@@ -24,4 +24,4 @@ spec:
             - name: RABBITMQ_DEFAULT_PASS
               value: "guest"
             - name: MYSQL_PASSWORD
-              value: "root"
+              value: "test"
